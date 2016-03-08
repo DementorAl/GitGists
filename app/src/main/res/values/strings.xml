@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">GitGists</string>
+    <string name="all_gists">All Gists</string>
+    <string name="notes">Notes</string>
+    <string name="all_in_one">All in one</string>
+    <string name="view_original">View original</string>
+    <string name="done">Done</string>
+    <string name="description">Description</string>
+    <string name="note">Note</string>
+</resources>
