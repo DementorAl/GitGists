@@ -9,4 +9,5 @@
     <string name="note">Note</string>
     <string name="detail_gist">Detail Gist</string>
     <string name="NoName">NoName</string>
+    <string name="error">Loading Error</string>
 </resources>

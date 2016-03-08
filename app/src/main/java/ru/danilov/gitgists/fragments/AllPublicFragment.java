@@ -1,12 +1,14 @@
 package ru.danilov.gitgists.fragments;
 
 import android.os.Bundle;
+import android.widget.Toast;
 
 import com.octo.android.robospice.persistence.exception.SpiceException;
 import com.octo.android.robospice.request.listener.RequestListener;
 
 import io.realm.Realm;
 import io.realm.RealmResults;
+import ru.danilov.gitgists.R;
 import ru.danilov.gitgists.api.model.Gist;
 import ru.danilov.gitgists.api.requests.GetAllPublicRequest;
 
@@ -32,6 +34,7 @@ public class AllPublicFragment extends BaseGistsFragment {
         getSpiceManager().execute(new GetAllPublicRequest(getActivity()), new RequestListener<Gist.SuperList>() {
             @Override
             public void onRequestFailure(SpiceException spiceException) {
+                Toast.makeText(getActivity(), R.string.error,Toast.LENGTH_LONG).show();
                 if (swipeContainer != null)
                     swipeContainer.setRefreshing(false);
             }
