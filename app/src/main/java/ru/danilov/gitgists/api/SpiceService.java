@@ -1,4 +1,4 @@
-package ru.danilov.gitgists;
+package ru.danilov.gitgists.api;
 
 import com.google.gson.ExclusionStrategy;
 import com.google.gson.FieldAttributes;
@@ -11,9 +11,9 @@ import java.util.Locale;
 import io.realm.RealmObject;
 import retrofit.RequestInterceptor;
 import retrofit.RestAdapter;
-import retrofit.android.AndroidLog;
 import retrofit.converter.Converter;
 import retrofit.converter.GsonConverter;
+import ru.danilov.gitgists.api.GistApi;
 
 /**
  * Created by Danilov Alexey on 06.03.2016.

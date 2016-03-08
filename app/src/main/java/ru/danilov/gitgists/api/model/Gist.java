@@ -1,4 +1,4 @@
-package ru.danilov.gitgists.model;
+package ru.danilov.gitgists.api.model;
 
 /**
  * Created by Danilov Alexey on 05.03.2016.
@@ -10,7 +10,6 @@ import com.google.gson.reflect.TypeToken;
 import java.io.Serializable;
 import java.lang.reflect.Type;
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.Map;
 
 import io.realm.RealmObject;
@@ -53,12 +52,12 @@ public class Gist extends RealmObject implements Serializable    {
     }
 
 
-    public String getLocaleDiscription() {
-        return localeDiscription;
+    public String getLocaleDescription() {
+        return localeDescription;
     }
 
-    public void setLocaleDiscription(String localeDiscription) {
-        this.localeDiscription = localeDiscription;
+    public void setLocaleDescription(String localeDescription) {
+        this.localeDescription = localeDescription;
     }
 
     public String getNote() {
@@ -69,7 +68,7 @@ public class Gist extends RealmObject implements Serializable    {
         this.note = note;
     }
 
-    private String localeDiscription;
+    private String localeDescription;
     private String note;
 
     public String getUrl() {

@@ -1,9 +1,10 @@
-package ru.danilov.gitgists.activitys;
+package ru.danilov.gitgists.activities;
 
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
 
 import ru.danilov.gitgists.R;
@@ -13,7 +14,7 @@ import ru.danilov.gitgists.fragments.NotesFragment;
 /**
  * Created by Danilov Alexey on 07.03.2016.
  */
-public class CategoryActivity extends SpiceActivity {
+public class CategoryActivity extends AppCompatActivity {
 
     public static final String IS_ALL_TAG = "all";
 
@@ -32,11 +33,11 @@ public class CategoryActivity extends SpiceActivity {
             boolean isAll = getIntent().getBooleanExtra(IS_ALL_TAG, false);
             if (isAll){
                 getSupportFragmentManager().beginTransaction().add(R.id.parent,new AllPublicFragment()).commit();
-                setTitle("All Gists");
+                setTitle(R.string.all_gists);
             }
             else {
                 getSupportFragmentManager().beginTransaction().add(R.id.parent, new NotesFragment()).commit();
-                setTitle("Notes");
+                setTitle(R.string.notes);
 
             }
         }
@@ -46,6 +47,7 @@ public class CategoryActivity extends SpiceActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         if (item.getItemId() == android.R.id.home) {
             finish();
+            return true;
         }
         return super.onOptionsItemSelected(item);
     }

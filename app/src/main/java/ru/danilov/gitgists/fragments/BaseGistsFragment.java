@@ -1,7 +1,6 @@
 package ru.danilov.gitgists.fragments;
 
 import android.content.Context;
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.widget.SwipeRefreshLayout;
@@ -21,9 +20,8 @@ import butterknife.ButterKnife;
 import io.realm.RealmBaseAdapter;
 import io.realm.RealmResults;
 import ru.danilov.gitgists.R;
-import ru.danilov.gitgists.activitys.DetailActivity;
-import ru.danilov.gitgists.model.File;
-import ru.danilov.gitgists.model.Gist;
+import ru.danilov.gitgists.activities.DetailActivity;
+import ru.danilov.gitgists.api.model.Gist;
 
 /**
  * Created by Danilov Alexey on 07.03.2016.
@@ -61,17 +59,12 @@ public abstract class BaseGistsFragment extends SpiceFragment implements SwipeRe
         list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Intent intent = new Intent(getActivity(), DetailActivity.class);
-                Bundle bundle = new Bundle();
-                bundle.putSerializable("id", adapter.getRealmResult().get(position).getId());
-                intent.putExtras(bundle);
-                startActivity(intent);
+                DetailActivity.start(getActivity(),adapter.getRealmResult().get(position).getId());
             }
         });
         loadData();
 
     }
-
 
     public abstract RealmResults<Gist> loadData();
 
@@ -112,18 +105,10 @@ public abstract class BaseGistsFragment extends SpiceFragment implements SwipeRe
                 ImageLoader.getInstance().displayImage("", holder.avatar);
                 holder.ownerName.setText("NoName");
             }
-            if (gist.getFiles() != null) {
-                String lan = "";
-                for (File file : gist.getFiles().values()) {
-                    if (file.getLanguage() != null)
-                        if (!file.getLanguage().equals("null"))
-                            lan += file.getLanguage() + " ";
-                }
-                holder.language.setText(lan);
-            }
+
             if (gist.getDescription() != null) {
-                holder.discription.setText(gist.getDescription());
-            } else holder.discription.setText("");
+                holder.description.setText(gist.getDescription());
+            } else holder.description.setText("");
 
 
             return convertView;
@@ -136,10 +121,8 @@ public abstract class BaseGistsFragment extends SpiceFragment implements SwipeRe
             TextView ownerName;
             @Bind(R.id.owner_layout)
             LinearLayout ownerLayout;
-            @Bind(R.id.language)
-            TextView language;
-            @Bind(R.id.discription)
-            TextView discription;
+            @Bind(R.id.description)
+            TextView description;
             @Bind(R.id.container)
             LinearLayout container;
 

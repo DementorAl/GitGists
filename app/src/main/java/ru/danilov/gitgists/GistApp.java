@@ -1,7 +1,6 @@
 package ru.danilov.gitgists;
 
 import android.app.Application;
-import android.content.Context;
 
 import com.nostra13.universalimageloader.cache.disc.naming.Md5FileNameGenerator;
 import com.nostra13.universalimageloader.core.DisplayImageOptions;
@@ -21,9 +20,9 @@ public class GistApp extends Application {
         config.threadPriority(Thread.NORM_PRIORITY - 2);
         config.denyCacheImageMultipleSizesInMemory();
         config.diskCacheFileNameGenerator(new Md5FileNameGenerator());
-        config.diskCacheSize(50 * 1024 * 1024); // 50 MiB
+        config.diskCacheSize(50 * 1024 * 1024);
         config.tasksProcessingOrder(QueueProcessingType.LIFO);
-        config.writeDebugLogs(); // Remove for release app
+        config.writeDebugLogs();
         DisplayImageOptions options = new DisplayImageOptions.Builder()
                 .resetViewBeforeLoading(true)
                 .cacheInMemory(true)

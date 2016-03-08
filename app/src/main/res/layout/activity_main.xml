@@ -7,40 +7,40 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="ru.danilov.gitgists.MainActivity"
-    >
-<LinearLayout
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:gravity="center"
-    >
-    <Button
-        android:layout_width="258dp"
-        android:layout_height="wrap_content"
-        android:text="@string/all_gists"
-        android:id="@+id/all_gist_button"
-        android:theme="@style/PrimaryButton"
-        />
+    tools:context="ru.danilov.gitgists.MainActivity">
 
-    <Button
-        android:layout_width="258dp"
-        android:layout_height="wrap_content"
-        android:text="@string/notes"
-        android:layout_marginTop="32dp"
-        android:layout_marginBottom="32dp"
-        android:id="@+id/notes_button"
-        android:theme="@style/PrimaryButton"
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="vertical">
 
-        />
-    <Button
-        android:layout_width="258dp"
-        android:layout_height="wrap_content"
-        android:text="@string/all_in_one"
-        android:id="@+id/all_in_button"
-        android:theme="@style/PrimaryButton"
+        <Button
+            android:id="@+id/all_gist_button"
+            android:layout_width="258dp"
+            android:layout_height="wrap_content"
+            android:text="@string/all_gists"
+            android:theme="@style/PrimaryButton" />
 
-        />
-</LinearLayout>
+        <Button
+            android:id="@+id/notes_button"
+            android:layout_width="258dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="32dp"
+            android:layout_marginTop="32dp"
+            android:text="@string/notes"
+            android:theme="@style/PrimaryButton"
+
+            />
+
+        <Button
+            android:id="@+id/all_in_button"
+            android:layout_width="258dp"
+            android:layout_height="wrap_content"
+            android:text="@string/all_in_one"
+            android:theme="@style/PrimaryButton"
+
+            />
+    </LinearLayout>
 
 </RelativeLayout>

@@ -7,8 +7,8 @@ import com.octo.android.robospice.request.listener.RequestListener;
 
 import io.realm.Realm;
 import io.realm.RealmResults;
-import ru.danilov.gitgists.model.Gist;
-import ru.danilov.gitgists.requests.GetAllPublicRequest;
+import ru.danilov.gitgists.api.model.Gist;
+import ru.danilov.gitgists.api.requests.GetAllPublicRequest;
 
 /**
  * Created by Danilov Alexey on 08.03.2016.
@@ -25,7 +25,6 @@ public class AllPublicFragment extends BaseGistsFragment {
     public RealmResults<Gist> loadData() {
         Realm realm = Realm.getInstance(getActivity());
         return realm.where(Gist.class).findAllSorted("created_at");
-
     }
 
     @Override
@@ -35,7 +34,6 @@ public class AllPublicFragment extends BaseGistsFragment {
             public void onRequestFailure(SpiceException spiceException) {
                 if (swipeContainer != null)
                     swipeContainer.setRefreshing(false);
-
             }
 
             @Override

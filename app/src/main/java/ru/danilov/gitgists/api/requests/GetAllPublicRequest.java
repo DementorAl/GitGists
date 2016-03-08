@@ -1,10 +1,9 @@
-package ru.danilov.gitgists.requests;
+package ru.danilov.gitgists.api.requests;
 
 import android.content.Context;
-import android.util.Log;
 
 import io.realm.Realm;
-import ru.danilov.gitgists.model.Gist;
+import ru.danilov.gitgists.api.model.Gist;
 
 /**
  * Created by Danilov Alexey on 05.03.2016.
@@ -22,12 +21,11 @@ public class GetAllPublicRequest  extends BaseApiRequest<Gist.SuperList> {
     public Gist.SuperList loadDataFromNetwork() throws Exception {
 
         Realm realm = Realm.getInstance(context);
-        Log.d("first", String.valueOf(realm.allObjects(Gist.class).size()));
         realm.beginTransaction();
-        realm.copyToRealmOrUpdate(getService().getAllGists());
+        Gist.SuperList allGists = getService().getAllGists();
+        realm.copyToRealmOrUpdate(allGists);
         realm.commitTransaction();
-        Log.d("second", String.valueOf(realm.allObjects(Gist.class).size()));
 
-        return getService().getAllGists();
+        return allGists;
     }
 }

@@ -1,7 +1,7 @@
-package ru.danilov.gitgists;
+package ru.danilov.gitgists.api;
 
 import retrofit.http.GET;
-import ru.danilov.gitgists.model.Gist;
+import ru.danilov.gitgists.api.model.Gist;
 
 /**
  * Created by Danilov Alexey on 05.03.2016.

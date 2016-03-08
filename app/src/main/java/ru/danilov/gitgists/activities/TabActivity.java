@@ -1,4 +1,4 @@
-package ru.danilov.gitgists.activitys;
+package ru.danilov.gitgists.activities;
 
 import android.content.Context;
 import android.content.Intent;
@@ -35,7 +35,7 @@ public class TabActivity extends AppCompatActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.tab_activity);
-        setTitle("All in One");
+        setTitle(R.string.all_in_one);
         ButterKnife.bind(this);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         viewPager.setAdapter(new FragmentStatePagerAdapter(getSupportFragmentManager()) {
@@ -55,9 +55,9 @@ public class TabActivity extends AppCompatActivity {
             @Override
             public CharSequence getPageTitle(int position) {
                 if (position == 0){
-                    return  "All Gists";
+                    return  getString(R.string.all_in_one);
                 }
-                return "Notes";
+                return  getString(R.string.notes);
             }
         });
         tabLayout.setupWithViewPager(viewPager);
@@ -68,6 +68,7 @@ public class TabActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         if (item.getItemId() == android.R.id.home) {
             finish();
+            return true;
         }
         return super.onOptionsItemSelected(item);
     }

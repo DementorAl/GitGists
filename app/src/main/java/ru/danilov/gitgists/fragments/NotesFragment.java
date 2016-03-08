@@ -6,7 +6,7 @@ import android.view.View;
 
 import io.realm.Realm;
 import io.realm.RealmResults;
-import ru.danilov.gitgists.model.Gist;
+import ru.danilov.gitgists.api.model.Gist;
 
 /**
  * Created by Danilov Alexey on 08.03.2016.
@@ -15,7 +15,7 @@ public class NotesFragment extends BaseGistsFragment {
     @Override
     public RealmResults<Gist> loadData() {
         Realm realm = Realm.getInstance(getActivity());
-        return realm.where(Gist.class).isNotNull("localeDiscription").or().isNotNull("note").findAll();
+        return realm.where(Gist.class).isNotNull("localeDescription").or().isNotNull("note").findAll();
     }
 
     @Override

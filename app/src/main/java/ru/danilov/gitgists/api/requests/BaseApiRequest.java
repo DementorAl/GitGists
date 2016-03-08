@@ -1,11 +1,11 @@
-package ru.danilov.gitgists.requests;
+package ru.danilov.gitgists.api.requests;
 
 import com.octo.android.robospice.persistence.exception.SpiceException;
 import com.octo.android.robospice.request.retrofit.RetrofitSpiceRequest;
 import com.octo.android.robospice.retry.RetryPolicy;
 
 import retrofit.RetrofitError;
-import ru.danilov.gitgists.GistApi;
+import ru.danilov.gitgists.api.GistApi;
 
 /**
  * Created by Danilov Alexey on 05.03.2016.

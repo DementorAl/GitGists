@@ -3,23 +3,13 @@ package ru.danilov.gitgists;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
-import android.widget.Button;
 
-import butterknife.Bind;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
-import ru.danilov.gitgists.activitys.CategoryActivity;
-import ru.danilov.gitgists.activitys.TabActivity;
+import ru.danilov.gitgists.activities.CategoryActivity;
+import ru.danilov.gitgists.activities.TabActivity;
 
 public class MainActivity extends AppCompatActivity {
-
-    @Bind(R.id.all_gist_button)
-    Button allGistButton;
-    @Bind(R.id.notes_button)
-    Button notesButton;
-    @Bind(R.id.all_in_button)
-    Button allInButton;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

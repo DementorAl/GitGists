@@ -1,4 +1,4 @@
-package ru.danilov.gitgists.model;
+package ru.danilov.gitgists.api.model;
 
 import java.io.Serializable;
 
